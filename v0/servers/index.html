@@ -14,10 +14,18 @@
            "url":"https://api.githubcopilot.com/mcp",
            "headers":[
              {
-               "name":"Bearer",
-               "description":"Token for authentication https://github.com/settings/personal-access-tokens/new",
+               "name": "Authorization",
+               "value": "Bearer {github_mcp_pat}",
+               "description": "Header used for authentication",
                "is_required":true,
-               "is_secret":true
+               "is_secret": false,
+               "variables": {
+                 "github_mcp_pat": {
+                   "description": "GitHub Personal Access Token https://github.com/settings/personal-access-tokens/new",
+                   "is_required": true,
+                   "is_secret": true
+                 }
+               }
              }
            ]
          }
